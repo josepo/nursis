@@ -1,2 +1,2 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿DateTime date = new(2025, 1, 1);
+Console.WriteLine(date.ToString());
