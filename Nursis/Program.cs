@@ -1,2 +1,6 @@
 ﻿DateTime date = new(2025, 1, 1);
-Console.WriteLine(date.ToString());
+
+for (int i = 0; i < 365; i++)
+{
+    Console.WriteLine(date.AddDays(i));
+}
