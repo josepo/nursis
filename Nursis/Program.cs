@@ -2,5 +2,5 @@
 
 for (int i = 0; i < 365; i++)
 {
-    Console.WriteLine(date.AddDays(i));
+    Console.WriteLine(date.AddDays(i).ToShortDateString());
 }
