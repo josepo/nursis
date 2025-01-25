@@ -2,7 +2,7 @@ namespace Nursis;
 
 public class Sequence
 {
-    List<Shifts> _shifts = new();
+    private List<Shifts> _shifts = new();
 
     public Sequence(List<Shifts> shifts)
     {
