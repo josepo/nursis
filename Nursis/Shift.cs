@@ -8,12 +8,12 @@ public enum Shift
     Night
 }
 
-public class Shifts
+public class ShiftPair
 {
     public Shift First { get; private set; }
     public Shift Second { get; private set; }
 
-    public Shifts(Shift first, Shift second)
+    public ShiftPair(Shift first, Shift second)
     {
         First = first;
         Second = second;

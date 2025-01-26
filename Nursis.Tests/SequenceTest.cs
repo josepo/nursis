@@ -7,9 +7,9 @@ public class SequenceTest
     {
         Sequence sequence = new(
         [
-            new Shifts(first: Shift.Early, second: Shift.Night),
-            new Shifts(first: Shift.None, second: Shift.None),
-            new Shifts(first: Shift.None, second: Shift.Late)
+            new ShiftPair(first: Shift.Early, second: Shift.Night),
+            new ShiftPair(first: Shift.None, second: Shift.None),
+            new ShiftPair(first: Shift.None, second: Shift.Late)
         ]);
 
         Assert.NotNull(sequence);
