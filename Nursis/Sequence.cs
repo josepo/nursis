@@ -13,11 +13,13 @@ public class Sequence
     {
         int returnedShifts = 0;
         int totalNumberOfShifts = _shifts.Count;
+        int i = start % totalNumberOfShifts;
 
-        for (int i = start % totalNumberOfShifts; returnedShifts < number; i = (i + 1) % totalNumberOfShifts)
+        while (returnedShifts < number)
         {
             yield return _shifts.ElementAt(i);
 
+            i = (i + 1) % totalNumberOfShifts;
             returnedShifts++;
         }
     }
