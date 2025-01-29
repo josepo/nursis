@@ -1,3 +1,5 @@
+using System.Diagnostics.Tracing;
+
 namespace Nursis;
 
 public enum Shift
@@ -10,6 +12,10 @@ public enum Shift
 
 public class ShiftPair
 {
+    public static ShiftPair None = new(Shift.None, Shift.None);
+    public static ShiftPair EarlyNight = new(Shift.Early, Shift.Night);
+    public static ShiftPair Late = new(Shift.Late, Shift.None);
+
     public Shift First { get; private set; }
     public Shift Second { get; private set; }
 
