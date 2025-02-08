@@ -7,9 +7,9 @@ public class SequenceTest
     {
         Sequence sequence = new(
         [
-            new ShiftPair(first: Shift.Early, second: Shift.Night),
-            new ShiftPair(first: Shift.None, second: Shift.None),
-            new ShiftPair(first: Shift.None, second: Shift.Late)
+            Shift.EarlyNight,
+            Shift.None,
+            Shift.None
         ]);
 
         Assert.NotNull(sequence);
@@ -20,16 +20,15 @@ public class SequenceTest
     {
         Sequence sequence = new(
         [
-            new ShiftPair(first: Shift.Early, second: Shift.Night),
-            new ShiftPair(first: Shift.None, second: Shift.None),
-            new ShiftPair(first: Shift.None, second: Shift.Late)
+            Shift.EarlyNight,
+            Shift.None,
+            Shift.Late
         ]);
 
-
-        List<ShiftPair> shifts = sequence.GetShifs(start: 2, number: 2).ToList();
+        List<Shift> shifts = sequence.GetShifs(start: 2, number: 2).ToList();
 
         Assert.Equal(2, shifts.Count);
-        Assert.Equal(Shift.Late, shifts.First().Second);
-        Assert.Equal(Shift.Early, shifts.Last().First);
+        Assert.Equal(Shift.Late, shifts.First());
+        Assert.Equal(Shift.EarlyNight, shifts.Last());
     }
 }

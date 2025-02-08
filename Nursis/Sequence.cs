@@ -2,14 +2,14 @@ namespace Nursis;
 
 public class Sequence
 {
-    private List<ShiftPair> _shifts = [];
+    private List<Shift> _shifts = [];
 
-    public Sequence(List<ShiftPair> shifts)
+    public Sequence(List<Shift> shifts)
     {
         _shifts = shifts;
     }
 
-    public IEnumerable<ShiftPair> GetShifs(int start, int number)
+    public IEnumerable<Shift> GetShifs(int start, int number)
     {
         int returnedShifts = 0;
         int totalNumberOfShifts = _shifts.Count;

@@ -1,37 +1,31 @@
-using System.Diagnostics.Tracing;
-
 namespace Nursis;
 
-public enum Shift
+public enum ShiftType
 {
-    None,
-    Early,
-    Late,
-    Night
+    None, 
+    EarlyNight,
+    Late
 }
 
-public class ShiftPair
-{
-    public static ShiftPair None = new(Shift.None, Shift.None);
-    public static ShiftPair EarlyNight = new(Shift.Early, Shift.Night);
-    public static ShiftPair Late = new(Shift.Late, Shift.None);
+public class Shift {
+    public static Shift None = new(ShiftType.None);
+    public static Shift EarlyNight = new(ShiftType.EarlyNight);
+    public static Shift Late = new(ShiftType.Late);
 
-    public Shift First { get; private set; }
-    public Shift Second { get; private set; }
+    private ShiftType _type;
 
-    public ShiftPair(Shift first, Shift second)
+    private Shift(ShiftType type)
     {
-        First = first;
-        Second = second;
+        _type = type;
     }
 
     public override string ToString()
     {
-        if ((First == Shift.Late) || (Second == Shift.Late))
-            return "T";
-
-        if ((First == Shift.Early) && (Second == Shift.Night))
+        if (_type == ShiftType.EarlyNight)
             return "MN";
+
+        if (_type == ShiftType.Late)
+            return "T";
 
         return "-";
     }
