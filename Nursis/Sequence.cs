@@ -4,9 +4,13 @@ public class Sequence
 {
     private List<Shift> _shifts = [];
 
-    public Sequence(List<Shift> shifts)
+    public Sequence(params ShiftWeek[] weeks)
     {
-        _shifts = shifts;
+        foreach (ShiftWeek week in weeks)
+        {
+            for (int i = 0; i < 7; i++)
+                _shifts.Add(week.Shifts[i]);
+        }
     }
 
     public IEnumerable<Shift> GetShifs(int start, int number)

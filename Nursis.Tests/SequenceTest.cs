@@ -7,9 +7,7 @@ public class SequenceTest
     {
         Sequence sequence = new(
         [
-            Shift.EarlyNight,
-            Shift.None,
-            Shift.None
+            ShiftWeek.From("MN - - - T - -")
         ]);
 
         Assert.NotNull(sequence);
@@ -20,9 +18,7 @@ public class SequenceTest
     {
         Sequence sequence = new(
         [
-            Shift.EarlyNight,
-            Shift.None,
-            Shift.Late
+            ShiftWeek.From("MN - T MN - - -")
         ]);
 
         List<Shift> shifts = sequence.GetShifs(start: 2, number: 2).ToList();
