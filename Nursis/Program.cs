@@ -63,7 +63,7 @@ Sequence sequence = new
 
 DateTime date = new(2025, 1, 1);
 
-foreach (Shift shift in sequence.GetShifs(week: 18, numOfDays: 365))
+foreach (Shift shift in sequence.GetShifs(week: 24, numOfDays: 365))
 {
     Console.WriteLine(date.ToShortDateString() + "\t" + shift.ToString());
 
