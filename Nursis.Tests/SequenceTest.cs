@@ -21,10 +21,10 @@ public class SequenceTest
             ShiftWeek.From("MN - T MN - - -")
         ]);
 
-        List<Shift> shifts = sequence.GetShifs(start: 2, number: 2).ToList();
+        List<Shift> shifts = sequence.GetShifs(week: 1, numOfDays: 2).ToList();
 
         Assert.Equal(2, shifts.Count);
-        Assert.Equal(Shift.Late, shifts.First());
-        Assert.Equal(Shift.EarlyNight, shifts.Last());
+        Assert.Equal(Shift.EarlyNight, shifts.First());
+        Assert.Equal(Shift.None, shifts.Last());
     }
 }

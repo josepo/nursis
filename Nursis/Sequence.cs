@@ -13,13 +13,14 @@ public class Sequence
         }
     }
 
-    public IEnumerable<Shift> GetShifs(int start, int number)
+    public IEnumerable<Shift> GetShifs(int week, int numOfDays)
     {
         int returnedShifts = 0;
         int totalNumberOfShifts = _shifts.Count;
+        int start = (week - 1) * 7;
         int i = start % totalNumberOfShifts;
 
-        while (returnedShifts < number)
+        while (returnedShifts < numOfDays)
         {
             yield return _shifts.ElementAt(i);
 
