@@ -101,7 +101,9 @@ Sequence sequence = new
 
 DateTime date = new(2025, 1, 1);
 
-for (int i = 0; i < 365; i++)
+foreach (ShiftPair shift in sequence.GetShifs(0, 365))
 {
-    Console.WriteLine(date.AddDays(i).ToShortDateString());
+    Console.WriteLine(date.ToShortDateString() + "\t" + shift.ToString());
+
+    date = date.AddDays(1);
 }

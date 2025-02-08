@@ -24,4 +24,15 @@ public class ShiftPair
         First = first;
         Second = second;
     }
+
+    public override string ToString()
+    {
+        if ((First == Shift.Late) || (Second == Shift.Late))
+            return "T";
+
+        if ((First == Shift.Early) && (Second == Shift.Night))
+            return "MN";
+
+        return "-";
+    }
 }
